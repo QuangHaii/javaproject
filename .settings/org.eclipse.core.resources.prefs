@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+encoding//src/App/App.java=UTF-8
+encoding//src/App/DonMuaHang.java=UTF-8
+encoding//src/App/QuanLyKhachHang.java=UTF-8
+encoding//src/App/QuanLyNhanVien.java=UTF-8
+encoding//src/App/QuanLySanPham.java=UTF-8
+encoding//src/Customer/Customer.java=UTF-8
+encoding//src/Order/OrderDetails.java=UTF-8
+encoding//src/Product/Drink.java=UTF-8
+encoding//src/Product/Food.java=UTF-8
+encoding//src/Product/Product.java=UTF-8
+encoding//src/Staff/Cashier.java=UTF-8
+encoding//src/Staff/Chef.java=UTF-8
+encoding//src/Staff/Manager.java=UTF-8
+encoding//src/Staff/Waiter.java=UTF-8
