@@ -1,6 +1,7 @@
 package App;
 
 import java.util.Scanner;
+import Payment.*;
 
 public class App {
 
@@ -10,7 +11,8 @@ public class App {
 		System.out.println("2.Nhân viên");
 		System.out.println("3.Sản phẩm");
 		System.out.println("4.Đặt hàng");
-		System.out.println("5.Thoát");
+		System.out.println("5.Thanh toán");
+		System.out.println("6.Thoát");
 		System.out.println("Mời bạn chọn mục:");
 	}
 
@@ -42,12 +44,40 @@ public class App {
 				dsMuaHang.order();
 				break;
 			}
-			case 5:
+			case 5:{
+				int func;
+				do {
+					System.out.println("Chọn phương thức thanh toán");
+					System.out.println("1.Thẻ ngân hàng");
+					System.out.println("2.Điện thoại");
+					System.out.println("3.Tiền mặt");
+					System.out.println("Mời bạn chọn:");
+					func=Integer.parseInt(scanner.nextLine());
+				} while (func!=1||func!=2||func!=3);
+				Payment payment = null;		
+				switch (func) {
+				case 1: {
+					payment = new CreditCard();
+					break;
+				}
+				case 2: {
+					payment = new MobileBanking();
+					break;
+				}
+				case 3: {
+					payment = new Cash();
+					break;
+				}
+			}
+				payment.input();
+				payment.output();	
+		}
+			case 6:
 				break;
 			default:
 				System.out.println("Nhập sai! Nhập lại");
 			}
-		} while (key != 5);
+		} while (key != 6);
 		System.out.println("Cảm ơn bạn đã sử dụng!");
 	}
 }

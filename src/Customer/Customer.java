@@ -6,13 +6,13 @@ public class Customer {
 	private String name;
 	private int customerID;
 	private int age;
-	private String phonenumber;
+	private int phonenumber;
 	
 	public Customer() {
 		
 	}
 
-	public Customer(String name, int customerID, int age, String phonenumber) {
+	public Customer(String name, int customerID, int age, int phonenumber) {
 		super();
 		this.name = name;
 		this.customerID = customerID;
@@ -44,11 +44,11 @@ public class Customer {
 		this.age = age;
 	}
 
-	public String getPhonenumber() {
+	public int getPhonenumber() {
 		return phonenumber;
 	}
 
-	public void setPhonenumber(String phonenumber) {
+	public void setPhonenumber(int phonenumber) {
 		this.phonenumber = phonenumber;
 	}
 	
@@ -63,7 +63,7 @@ public class Customer {
 		System.out.println("Nhập tuổi khách hàng: ");
 		age=Integer.parseInt(scanner.nextLine());
 		System.out.println("Nhập số điện thoại: ");
-		phonenumber=scanner.nextLine();
+		phonenumber=Integer.parseInt(scanner.nextLine());
 	}
 	
 	@Override

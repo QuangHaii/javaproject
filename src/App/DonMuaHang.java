@@ -11,6 +11,7 @@ public class DonMuaHang implements Tax{
 	private QuanLySanPham productlist = new QuanLySanPham();
 	private Product product[] = new Product[99];
 	private static int n = 0;
+	public float totalmoney;
 
 	public void order() {
 		int choice;
@@ -33,7 +34,8 @@ public class DonMuaHang implements Tax{
 				break;
 			}
 			case 3:{
-				System.out.println("Tổng số tiền phải thanh toán: "+calcTotal());
+				totalmoney = calcTotal();
+				System.out.println("Số tiền phải thanh toán: "+totalmoney);
 			}
 			case 4:
 				break;
@@ -43,7 +45,7 @@ public class DonMuaHang implements Tax{
 		} while (choice != 4);
 
 	}
-
+	
 	private OrderDetails[] addItem() {
 		product = productlist.getProduct();
 		ordermenu(product);
@@ -101,7 +103,7 @@ public class DonMuaHang implements Tax{
 		return x*tax;
 	}
 	
-	private float calcTotal() {
+	public float calcTotal() {
 		float sum=0;
 		for(int i=0;i<n;i++)
 			sum+=orderlist[i].getPrice()*orderlist[i].getQuantity();
