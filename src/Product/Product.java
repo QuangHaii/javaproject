@@ -71,6 +71,7 @@ public abstract class Product {
 		this.productType = productType;
 	}
 
+	@SuppressWarnings("resource")
 	public void input() {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Nhập tên hàng hóa: ");

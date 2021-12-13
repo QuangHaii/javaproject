@@ -43,6 +43,7 @@ public abstract class Staff {
 
 	public abstract void jobDescription();
 
+	@SuppressWarnings("resource")
 	public void input() {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Nhap ten nhan vien: ");

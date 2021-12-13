@@ -3,6 +3,7 @@ package App;
 import java.util.Scanner;
 import Customer.Customer;
 
+@SuppressWarnings("resource")
 public class QuanLyKhachHang {
 	private static int n = 0;
 	private Customer[] customers = new Customer[99];

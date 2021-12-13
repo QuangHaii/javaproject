@@ -3,6 +3,7 @@ package App;
 import java.util.Scanner;
 import Staff.*;
 
+@SuppressWarnings("resource")
 public class QuanLyNhanVien {
 	private Manager manager = new Manager("secret");
 	private static int n = 0;

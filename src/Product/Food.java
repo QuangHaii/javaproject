@@ -22,6 +22,7 @@ public class Food extends Product {
 		this.foodDescription = foodDescription;
 	}
 	
+	@SuppressWarnings("resource")
 	@Override
 	public void input() {
 		super.input();

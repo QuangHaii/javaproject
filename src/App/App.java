@@ -14,13 +14,14 @@ public class App {
 		System.out.println("Mời bạn chọn mục:");
 	}
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		QuanLyNhanVien dsNhanVien = new QuanLyNhanVien();
 		QuanLyKhachHang dsKhachHang = new QuanLyKhachHang();
 		QuanLySanPham dsSanPham = new QuanLySanPham();
 		DonMuaHang dsMuaHang = new DonMuaHang();
 		Scanner scanner = new Scanner(System.in);
-		int key, func;
+		int key;
 		do {
 			menu();
 			key = Integer.parseInt(scanner.nextLine());
@@ -47,6 +48,6 @@ public class App {
 				System.out.println("Nhập sai! Nhập lại");
 			}
 		} while (key != 5);
-		System.out.println("Bye bye!");
+		System.out.println("Cảm ơn bạn đã sử dụng!");
 	}
 }

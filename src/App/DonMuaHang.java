@@ -1,11 +1,11 @@
 package App;
 
 import java.util.Scanner;
-
 import Order.OrderDetails;
 import Order.Tax;
 import Product.Product;
 
+@SuppressWarnings("resource")
 public class DonMuaHang implements Tax{
 	private OrderDetails orderlist[] = new OrderDetails[99];
 	private QuanLySanPham productlist = new QuanLySanPham();
@@ -93,6 +93,7 @@ public class DonMuaHang implements Tax{
 		}
 		n--;
 		return newArr;
+		
 	}
 
 	@Override

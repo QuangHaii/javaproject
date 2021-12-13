@@ -33,6 +33,7 @@ public class Drink extends Product {
 		this.inStock = inStock;
 	}
 
+	@SuppressWarnings("resource")
 	@Override
 	public void input() {
 		super.input();

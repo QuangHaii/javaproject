@@ -3,6 +3,7 @@ package App;
 import java.util.Scanner;
 import Product.*;
 
+@SuppressWarnings("resource")
 public class QuanLySanPham {
 	private static int n = 0;
 	private static Product[] products = new Product[99];
@@ -95,6 +96,7 @@ public class QuanLySanPham {
 		return newArr;
 	}
 
+	
 	private void editProduct() {
 		productlist(products);
 		System.out.println("Nhập mã sản phẩm cần sửa: ");

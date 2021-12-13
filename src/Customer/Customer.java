@@ -52,6 +52,8 @@ public class Customer {
 		this.phonenumber = phonenumber;
 	}
 	
+	
+	@SuppressWarnings("resource")
 	public void input() {
 		Scanner scanner=new Scanner(System.in);
 		System.out.println("Nhập tên khách hàng: ");
