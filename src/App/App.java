@@ -73,6 +73,7 @@ public class App {
 					break;
 				}
 				}
+				payment.setMoneyammount(dsMuaHang.calcTotal());
 				payment.input();
 				payment.output();
 			}

@@ -12,7 +12,7 @@ public abstract class Payment {
 	}
 
 	public Payment(float moneyammount,String paymentType) {
-		this.moneyammount = moneyammount;
+
 		this.paymentType = paymentType;
 	}
 
@@ -30,10 +30,6 @@ public abstract class Payment {
 
 	public void setPaymentType(String paymentType) {
 		this.paymentType = paymentType;
-	}
-	
-	public void payammount() {
-		setMoneyammount(order.totalmoney);
 	}
 
 	public abstract double authorized();
