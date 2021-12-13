@@ -1,12 +1,5 @@
 package Order;
 
-import java.util.Scanner;
-
-
-import App.QuanLySanPham;
-import Product.*;
-
-
 public class OrderDetails{
 	private int orderID;
 	private int ProductID;

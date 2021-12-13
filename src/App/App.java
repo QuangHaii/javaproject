@@ -44,9 +44,9 @@ public class App {
 			case 5:
 				break;
 			default:
-				throw new IllegalArgumentException("Nhập sai! Nhập lại");
+				System.out.println("Nhập sai! Nhập lại");
 			}
-		} while (key != 6);
+		} while (key != 5);
 		System.out.println("Bye bye!");
 	}
 }

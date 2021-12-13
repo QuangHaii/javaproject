@@ -42,7 +42,7 @@ public class QuanLyKhachHang {
 				break;
 			}
 			default:
-				throw new IllegalArgumentException("Nhập sai! Nhập lại");
+				System.out.println("Nhập sai! Nhập lại");
 			}
 		} while (choice != 5);
 	}

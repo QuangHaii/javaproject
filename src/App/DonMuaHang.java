@@ -5,7 +5,6 @@ import java.util.Scanner;
 import Order.OrderDetails;
 import Order.Tax;
 import Product.Product;
-import App.QuanLySanPham;
 
 public class DonMuaHang implements Tax{
 	private OrderDetails orderlist[] = new OrderDetails[99];
@@ -39,7 +38,7 @@ public class DonMuaHang implements Tax{
 			case 4:
 				break;
 			default:
-				throw new IllegalArgumentException("Nhập sai! Nhập lại");
+				System.out.println("Nhập sai! Nhập lại");
 			}
 		} while (choice != 4);
 
