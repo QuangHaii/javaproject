@@ -35,9 +35,7 @@ public class QuanLySanPham {
 				break;
 			}
 			case 4: {
-				if(searchProduct()!=null)
-					searchProduct().output();
-				else System.out.println("Không tìm thấy sản phẩm");		
+				searchProduct();
 				break;
 			}
 			case 5: {
@@ -96,7 +94,6 @@ public class QuanLySanPham {
 		return newArr;
 	}
 
-	
 	private void editProduct() {
 		productlist(products);
 		System.out.println("Nhập mã sản phẩm cần sửa: ");
@@ -111,7 +108,7 @@ public class QuanLySanPham {
 			products[j].input();
 	}
 
-	public Product searchProduct() {
+	public void searchProduct() {
 		System.out.println("Nhập mã sản phẩm cần tìm: ");
 		int temp = Integer.parseInt(new Scanner(System.in).nextLine());
 		int j = -1;
@@ -119,19 +116,20 @@ public class QuanLySanPham {
 			if (products[i].getProductID() == temp)
 				j = i;
 		if (j == -1)
-			return null;
+			System.out.println("Không tìm thấy nhân viên");
 		else
-			return products[j];
+			products[j].output();
+
 	}
-	
+
 	public void productlist(Product[] p) {
 		System.out.println("--------Danh sách sản phẩm--------");
-		for(int i =0;i<p.length;i++) {
-			System.out.printf((i+1) + ".");
+		for (int i = 0; i < p.length; i++) {
+			System.out.printf((i + 1) + ".");
 			p[i].output();
 		}
 	}
-	
+
 	public Product[] getProduct() {
 		return products.clone();
 	}
