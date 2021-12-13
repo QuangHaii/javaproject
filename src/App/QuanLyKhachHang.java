@@ -4,11 +4,11 @@ import java.util.Scanner;
 import Customer.Customer;
 
 public class QuanLyKhachHang {
-	private static int n=0;
+	private static int n = 0;
 	private Customer[] customers = new Customer[99];
-	
+
 	public void edit() {
-		Scanner scanner=new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		int choice;
 		do {
 			System.out.println("(------------------Danh sách chức năng------------------------)");
@@ -26,7 +26,7 @@ public class QuanLyKhachHang {
 				break;
 			}
 			case 2: {
-				customers=deleteCustomer();
+				customers = deleteCustomer();
 				break;
 			}
 			case 3: {
@@ -38,24 +38,27 @@ public class QuanLyKhachHang {
 				break;
 			}
 			case 5: {
+
 				break;
 			}
 			default:
 				throw new IllegalArgumentException("Nhập sai! Nhập lại");
 			}
-		} while (choice!=5);
+		} while (choice != 5);
 	}
-	
+
 	private Customer[] addCustomer() {
-		Customer newArr[] = new Customer[n+1];
-		for(int i=0;i<n;i++)
-			newArr[i]=customers[i];
+		Customer newArr[] = new Customer[n + 1];
+		for (int i = 0; i < n; i++)
+			newArr[i] = customers[i];
+		newArr[n] = new Customer();
 		newArr[n].input();
 		n++;
 		return newArr;
 	}
-	
+
 	private Customer[] deleteCustomer() {
+		customerList(customers);
 		System.out.println("Nhập mã khách hàng cần xóa: ");
 		int temp = Integer.parseInt(new Scanner(System.in).nextLine());
 		int j = -1;
@@ -63,8 +66,8 @@ public class QuanLyKhachHang {
 			if (customers[i].getCustomerID() == temp)
 				j = i;
 		if (customers == null || j == -1) {
-			System.out.println("Không có phần tử để xóa");
-			return null;
+			System.out.println("Không tìm thấy khách hàng cần xóa");
+			return customers;
 		}
 		Customer[] newArr = new Customer[n - 1];
 		for (int i = 0, k = 0; i < n; i++) {
@@ -75,8 +78,9 @@ public class QuanLyKhachHang {
 		n--;
 		return newArr;
 	}
-	
+
 	private void editCustomer() {
+		customerList(customers);
 		System.out.println("Nhập mã khách hàng cần sửa: ");
 		int temp = Integer.parseInt(new Scanner(System.in).nextLine());
 		int j = -1;
@@ -88,7 +92,7 @@ public class QuanLyKhachHang {
 		else
 			customers[j].input();
 	}
-	
+
 	private void searchCustomer() {
 		System.out.println("Nhập mã khách hàng cần tìm: ");
 		int temp = Integer.parseInt(new Scanner(System.in).nextLine());
@@ -98,6 +102,16 @@ public class QuanLyKhachHang {
 				j = i;
 		if (j == -1)
 			System.out.println("Không tìm thấy khách hàng");
-		else customers[j].output();
+		else
+			customers[j].output();
+	}
+
+	private void customerList(Customer[] c) {
+		System.out.println("-------Danh sách khách hàng------");
+		for (int i = 0; i < c.length; i++) {
+			System.out.printf((i+1) + ".");
+			c[i].output();
+		}
+
 	}
 }

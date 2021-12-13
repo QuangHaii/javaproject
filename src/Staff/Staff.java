@@ -6,9 +6,9 @@ public abstract class Staff {
 	protected String staffName;
 	protected int staffID;
 	protected String jobType;
-	
+
 	public Staff() {
-		
+
 	}
 
 	public Staff(String staffName, int staffID, String jobType) {
@@ -40,22 +40,22 @@ public abstract class Staff {
 	public void setStaffID(int staffID) {
 		this.staffID = staffID;
 	}
-	
+
 	public abstract void jobDescription();
-	
-	public void input(){
-		Scanner scanner=new Scanner(System.in);
+
+	public void input() {
+		Scanner scanner = new Scanner(System.in);
 		System.out.println("Nhap ten nhan vien: ");
-		staffName=scanner.nextLine();
+		staffName = scanner.nextLine();
 		System.out.println("Nhap ma nhan vien: ");
-		staffID=Integer.parseInt(scanner.nextLine());
+		staffID = Integer.parseInt(scanner.nextLine());
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Ten nhan vien: "+staffName+"|Ma nhan vien: "+staffID;
+		return "Ten nhan vien: " + staffName + "|Ma nhan vien: " + staffID;
 	}
-	
+
 	public void output() {
 		System.out.println(toString());
 	}

@@ -5,7 +5,7 @@ import Product.*;
 
 public class QuanLySanPham {
 	private static int n = 0;
-	private Product[] products = new Product[99];
+	private static Product[] products = new Product[99];
 
 	public void edit() {
 		Scanner scanner = new Scanner(System.in);
@@ -74,11 +74,12 @@ public class QuanLySanPham {
 	}
 
 	private Product[] deleteProduct() {
+		productlist(products);
 		System.out.println("Nhập mã sản phẩm cần xóa: ");
 		int temp = Integer.parseInt(new Scanner(System.in).nextLine());
 		int j = -1;
 		for (int i = 0; i < n; i++)
-			if (products[i].getproductID() == temp)
+			if (products[i].getProductID() == temp)
 				j = i;
 		if (products == null || j == -1) {
 			System.out.println("Không có phần tử để xóa");
@@ -95,11 +96,12 @@ public class QuanLySanPham {
 	}
 
 	private void editProduct() {
+		productlist(products);
 		System.out.println("Nhập mã sản phẩm cần sửa: ");
 		int temp = Integer.parseInt(new Scanner(System.in).nextLine());
 		int j = -1;
 		for (int i = 0; i < n; i++)
-			if (products[i].getproductID() == temp)
+			if (products[i].getProductID() == temp)
 				j = i;
 		if (j == -1)
 			System.out.println("Không tìm thấy sản phẩm");
@@ -112,12 +114,20 @@ public class QuanLySanPham {
 		int temp = Integer.parseInt(new Scanner(System.in).nextLine());
 		int j = -1;
 		for (int i = 0; i < n; i++)
-			if (products[i].getproductID() == temp)
+			if (products[i].getProductID() == temp)
 				j = i;
 		if (j == -1)
 			return null;
 		else
 			return products[j];
+	}
+	
+	public void productlist(Product[] p) {
+		System.out.println("--------Danh sách sản phẩm--------");
+		for(int i =0;i<p.length;i++) {
+			System.out.printf((i+1) + ".");
+			p[i].output();
+		}
 	}
 	
 	public Product[] getProduct() {

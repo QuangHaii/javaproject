@@ -2,26 +2,16 @@ package Product;
 
 import java.util.Scanner;
 
-public class Food extends Product {
-	private String foodName;
+public class Food extends Product {	
 	private String foodDescription;
-	
 	public Food() {
-		
+		super();
+		productType="Food";
 	}
 
 	public Food(String foodName, int foodPrice, String foodDescription) {
 		super();
-		this.foodName = foodName;
 		this.foodDescription = foodDescription;
-	}
-
-	public String getFoodName() {
-		return foodName;
-	}
-
-	public void setFoodName(String foodName) {
-		this.foodName = foodName;
 	}
 
 	public String getFoodDescription() {
@@ -35,16 +25,13 @@ public class Food extends Product {
 	@Override
 	public void input() {
 		super.input();
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Nhập tên món ăn: ");
-		foodName=scanner.nextLine();
 		System.out.println("Nhập miêu tả món ăn: ");
-		foodDescription=scanner.nextLine();
+		foodDescription=new Scanner(System.in).nextLine();
 	}
 	
 	@Override
 	public String toString() {
-		return super.toString()+"Tên món ăn: "+foodName+"|Miêu tả: "+foodDescription;
+		return super.toString()+"|Miêu tả: "+foodDescription;
 	}
 	
 	public void output() {

@@ -10,7 +10,7 @@ import App.QuanLySanPham;
 public class DonMuaHang implements Tax{
 	private OrderDetails orderlist[] = new OrderDetails[99];
 	private QuanLySanPham productlist = new QuanLySanPham();
-	private Product products[] = new Product[99];
+	private Product product[] = new Product[99];
 	private static int n = 0;
 
 	public void order() {
@@ -46,20 +46,20 @@ public class DonMuaHang implements Tax{
 	}
 
 	private OrderDetails[] addItem() {
-		products = productlist.getProduct();
-		if(products==null) return null;
+		product = productlist.getProduct();
+		ordermenu(product);
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Nhập mã đơn hàng: ");
 		int id = Integer.parseInt(scanner.nextLine());
 		System.out.println("Nhập mã sản phẩm muốn thêm: ");
 		int productID = Integer.parseInt(scanner.nextLine());
 		Product p =null;
-		for(int i = 0;i<products.length;i++)
-			if(products[i].getProductID()==productID)
-				p=products[i];
+		for(int i = 0;i<product.length;i++)
+			if(product[i].getProductID()==productID)
+				p=product[i];
 		if(p==null) {
 			System.out.println("Nhập sai mã sản phẩm");
-			return null;
+			return orderlist;
 		}
 		System.out.println("Nhập số lượng: ");
 		int quantity = Integer.parseInt(scanner.nextLine());
@@ -84,7 +84,7 @@ public class DonMuaHang implements Tax{
 				j = i;
 		if (orderlist == null || j == -1) {
 			System.out.println("Không tìm thấy đơn hàng cần xóa");
-			return null;
+			return orderlist;
 		}
 		OrderDetails[] newArr = new OrderDetails[n - 1];
 		for (int i = 0, k = 0; i < n; i++) {
@@ -108,5 +108,11 @@ public class DonMuaHang implements Tax{
 		return sum+calcTax(sum);
 	}
 
-	
+	private void ordermenu(Product[] p) {
+		System.out.println("----Danh sách món ăn hiện có----");
+		for(int i = 0;i<p.length;i++) {
+			System.out.printf((i+1)+".");
+			p[i].output();
+		}
+	}
 }

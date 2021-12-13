@@ -87,6 +87,7 @@ public class QuanLyNhanVien {
 	}
 
 	private Staff[] deleteStaff() {
+		stafflist(staffs);
 		System.out.println("Nhập mã nhân viên cần xóa: ");
 		int temp = Integer.parseInt(new Scanner(System.in).nextLine());
 		int j = -1;
@@ -95,7 +96,7 @@ public class QuanLyNhanVien {
 				j = i;
 		if (staffs == null || j == -1) {
 			System.out.println("Không có phần tử để xóa");
-			return null;
+			return staffs;
 		}
 		Staff[] newArr = new Staff[n - 1];
 		for (int i = 0, k = 0; i < n; i++) {
@@ -108,6 +109,7 @@ public class QuanLyNhanVien {
 	}
 
 	private void editStaff() {
+		stafflist(staffs);
 		System.out.println("Nhập mã nhân viên cần sửa: ");
 		int temp = Integer.parseInt(new Scanner(System.in).nextLine());
 		int j = -1;
@@ -119,7 +121,7 @@ public class QuanLyNhanVien {
 		else
 			staffs[j].input();
 	}
-	
+
 	private void searchStaff() {
 		System.out.println("Nhập mã nhân viên cần tìm: ");
 		int temp = Integer.parseInt(new Scanner(System.in).nextLine());
@@ -132,6 +134,14 @@ public class QuanLyNhanVien {
 		else {
 			staffs[j].output();
 			staffs[j].jobDescription();
+		}
+	}
+
+	private void stafflist(Staff[] s) {
+		System.out.println("-------Danh sách nhân viên------");
+		for(int i=0;i<s.length;i++) {
+			System.out.println((i+1)+".");
+			s[i].output();
 		}
 	}
 }

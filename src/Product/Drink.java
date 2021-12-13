@@ -3,48 +3,49 @@ package Product;
 import java.util.Scanner;
 
 public class Drink extends Product {
-	private String drinkName;
-	private String drinkDescription;
+	private String drinkType;
+	private int inStock;
 	
 	public Drink() {
-		
-	}
-
-	public Drink(String drinkName, String drinkDescription) {
 		super();
-		this.drinkName = drinkName;
-		this.drinkDescription = drinkDescription;
-	}
-
-	public String getdrinkName() {
-		return drinkName;
-	}
-
-	public void setdrinkName(String drinkName) {
-		this.drinkName = drinkName;
-	}
-
-	public String getdrinkDescription() {
-		return drinkDescription;
-	}
-
-	public void setdrinkDescription(String drinkDescription) {
-		this.drinkDescription = drinkDescription;
+		productType="Drink";
 	}
 	
+	public Drink(String drinkType, int inStock) {
+		super();
+		this.drinkType = drinkType;
+		this.inStock = inStock;
+	}
+
+	public String getdrinkType() {
+		return drinkType;
+	}
+
+	public void setdrinkType(String drinkType) {
+		this.drinkType = drinkType;
+	}
+
+	public int getInStock() {
+		return inStock;
+	}
+
+	public void setInStock(int inStock) {
+		this.inStock = inStock;
+	}
+
 	@Override
 	public void input() {
 		super.input();
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Nhập tên đồ uống: ");
-		drinkName=scanner.nextLine();
-		System.out.println("Nhập miêu tả đồ uống: ");
-		drinkDescription=scanner.nextLine();
+		System.out.println("Nhập loại đồ uống: ");
+		drinkType=scanner.nextLine();
+		System.out.println("Nhập số lượng tồn kho: ");
+		inStock=Integer.parseInt(scanner.nextLine());
 	}
 	
 	@Override
 	public String toString() {
-		return super.toString()+"Tên đồ uống: "+drinkName+"|Miêu tả: "+drinkDescription;
+		return super.toString()+"|Loại đồ uống: "+drinkType+"|Tồn kho: "+inStock;
 	}
 	
 	public void output() {

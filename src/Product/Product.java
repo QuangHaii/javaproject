@@ -3,20 +3,40 @@ package Product;
 import java.util.Scanner;
 
 public abstract class Product {
-	private int productID;
-	private int amount;
-	private int importDate;
-	private int price;
-	
+	protected String productName;
+	protected int productID;
+	protected int amount;
+	protected int importDate;
+	protected int price;
+	protected String productType;
+
 	public Product() {
-		
+
 	}
 
-	public Product(int amount, int importDate, int productID,int price) {
+	public Product(String productName, int productID, int amount, int importDate, int price, String productType) {
+		this.productName = productName;
+		this.productID = productID;
 		this.amount = amount;
 		this.importDate = importDate;
-		this.productID = productID;
 		this.price = price;
+		this.productType = productType;
+	}
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+	public int getProductID() {
+		return productID;
+	}
+
+	public void setProductID(int productID) {
+		this.productID = productID;
 	}
 
 	public int getAmount() {
@@ -34,14 +54,6 @@ public abstract class Product {
 	public void setImportDate(int importDate) {
 		this.importDate = importDate;
 	}
-	
-	public int getproductID() {
-		return productID;
-	}
-
-	public void setProductID(int productID) {
-		this.productID = productID;
-	}
 
 	public int getPrice() {
 		return price;
@@ -51,27 +63,33 @@ public abstract class Product {
 		this.price = price;
 	}
 
-	public int getProductID() {
-		return productID;
+	public String getProductType() {
+		return productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
 	}
 
 	public void input() {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Nhập số lượng hàng hóa: ");
-		amount=Integer.parseInt(scanner.nextLine());
-		System.out.println("Nhập ngày nhập hàng: ");
-		importDate=Integer.parseInt(scanner.nextLine());
+		System.out.println("Nhập tên hàng hóa: ");
+		productName=scanner.nextLine();
 		System.out.println("Nhập mã hàng hóa: ");
-		productID=Integer.parseInt(scanner.nextLine());
+		productID = Integer.parseInt(scanner.nextLine());
+		System.out.println("Nhập số lượng hàng hóa: ");
+		amount = Integer.parseInt(scanner.nextLine());
+		System.out.println("Nhập ngày nhập hàng: ");
+		importDate = Integer.parseInt(scanner.nextLine());
 		System.out.println("Nhập giá tiền: ");
-		price=Integer.parseInt(scanner.nextLine());
+		price = Integer.parseInt(scanner.nextLine());
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Số lượng hàng hóa: "+amount+"|Ngày nhập hàng: "+importDate+"|Mã sản phẩm: "+productID+"|Giá tiền: "+price;
+		return  "Tên sản phẩm: "+ productName +"|Mã sản phẩm: " + productID+"|Số lượng hàng hóa: " + amount + "|Ngày nhập hàng: " + importDate + "|Giá tiền: " + price;
 	}
-	
+
 	public void output() {
 		System.out.println(toString());
 	}
