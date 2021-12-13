@@ -20,7 +20,7 @@ public class DonMuaHang implements Tax{
 			System.out.println("----------Đặt hàng-----------");
 			System.out.println("1.Thêm món ăn");
 			System.out.println("2.Xóa món ăn");
-			System.out.println("3.Thanh toán");
+			System.out.println("3.Xem tổng giá tiền");
 			System.out.println("4.Thoát");
 			choice = Integer.parseInt(scanner.nextLine());
 

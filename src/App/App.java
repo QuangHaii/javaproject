@@ -44,17 +44,21 @@ public class App {
 				dsMuaHang.order();
 				break;
 			}
-			case 5:{
-				int func;
+			case 5: {
+				int func, flag=0;
 				do {
 					System.out.println("Chọn phương thức thanh toán");
 					System.out.println("1.Thẻ ngân hàng");
 					System.out.println("2.Điện thoại");
 					System.out.println("3.Tiền mặt");
 					System.out.println("Mời bạn chọn:");
-					func=Integer.parseInt(scanner.nextLine());
-				} while (func!=1||func!=2||func!=3);
-				Payment payment = null;		
+					func = Integer.parseInt(scanner.nextLine());
+					if (func == 1 || func == 2 || func == 3)
+						flag = 1;
+					else
+						System.out.println("Nhập sai! Nhập lại");
+				} while (flag == 0);
+				Payment payment = null;
 				switch (func) {
 				case 1: {
 					payment = new CreditCard();
@@ -68,10 +72,10 @@ public class App {
 					payment = new Cash();
 					break;
 				}
-			}
+				}
 				payment.input();
-				payment.output();	
-		}
+				payment.output();
+			}
 			case 6:
 				break;
 			default:
