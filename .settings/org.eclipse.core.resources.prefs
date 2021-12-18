@@ -5,6 +5,7 @@ encoding//src/App/QuanLyKhachHang.java=UTF-8
 encoding//src/App/QuanLyNhanVien.java=UTF-8
 encoding//src/App/QuanLySanPham.java=UTF-8
 encoding//src/Customer/Customer.java=UTF-8
+encoding//src/Customer/NormalCustomer.java=UTF-8
 encoding//src/Order/OrderDetails.java=UTF-8
 encoding//src/Payment/Cash.java=UTF-8
 encoding//src/Payment/CreditCard.java=UTF-8

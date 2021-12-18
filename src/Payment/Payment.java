@@ -1,11 +1,8 @@
 package Payment;
 
-import App.DonMuaHang;
-
 public abstract class Payment {
-	protected float moneyammount;
+	protected double moneyammount;
 	protected String paymentType;
-	private DonMuaHang order = new DonMuaHang();
 	
 	public Payment() {
 		
@@ -20,7 +17,7 @@ public abstract class Payment {
 		return moneyammount;
 	}
 
-	public void setMoneyammount(float moneyammount) {	
+	public void setMoneyammount(double moneyammount) {	
 		this.moneyammount = moneyammount;
 	}
 

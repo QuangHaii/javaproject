@@ -3,21 +3,24 @@ package Customer;
 import java.util.Scanner;
 
 public class Customer {
-	private String name;
-	private int customerID;
-	private int age;
-	private int phonenumber;
-	
+	protected String name;
+	protected int customerID;
+	protected int age;
+	protected int phonenumber;
+	protected String customerType;
+	protected double discount = 0;
+
 	public Customer() {
-		
+
 	}
 
-	public Customer(String name, int customerID, int age, int phonenumber) {
-		super();
+	public Customer(String name, int customerID, int age, int phonenumber, String customerType, double discount) {
 		this.name = name;
 		this.customerID = customerID;
 		this.age = age;
 		this.phonenumber = phonenumber;
+		this.customerType = customerType;
+		this.discount = discount;
 	}
 
 	public String getName() {
@@ -51,26 +54,41 @@ public class Customer {
 	public void setPhonenumber(int phonenumber) {
 		this.phonenumber = phonenumber;
 	}
-	
-	
+
+	public String getCustomerType() {
+		return customerType;
+	}
+
+	public void setCustomerType(String customerType) {
+		this.customerType = customerType;
+	}
+
+	public double getDiscount() {
+		return discount;
+	}
+
+	public void setDiscount(double discount) {
+		this.discount = discount;
+	}
+
 	@SuppressWarnings("resource")
 	public void input() {
-		Scanner scanner=new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		System.out.println("Nhập tên khách hàng: ");
-		name=scanner.nextLine();
+		name = scanner.nextLine();
 		System.out.println("Nhập mã khách hàng: ");
-		customerID=Integer.parseInt(scanner.nextLine());
+		customerID = Integer.parseInt(scanner.nextLine());
 		System.out.println("Nhập tuổi khách hàng: ");
-		age=Integer.parseInt(scanner.nextLine());
+		age = Integer.parseInt(scanner.nextLine());
 		System.out.println("Nhập số điện thoại: ");
-		phonenumber=Integer.parseInt(scanner.nextLine());
+		phonenumber = Integer.parseInt(scanner.nextLine());
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Tên khách hàng: "+name+"|Mã khách hàng: "+customerID+"|Tuổi: "+age+"|SĐT: "+phonenumber;
+		return "Tên khách hàng: " + name + "|Mã khách hàng: " + customerID + "|Tuổi: " + age + "|SĐT: " + phonenumber;
 	}
-	
+
 	public void output() {
 		System.out.println(toString());
 	}
