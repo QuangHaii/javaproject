@@ -1,6 +1,8 @@
 package App;
 
 import java.util.Scanner;
+
+import Customer.Customer;
 import Payment.*;
 
 public class App {
@@ -78,7 +80,8 @@ public class App {
 					break;
 				}
 				}
-				payment.setMoneyammount(dsMuaHang.calcTotal()-dsKhachHang.searchCustomer().getDiscount()*dsMuaHang.calcTotal());
+				Customer temp = dsKhachHang.searchCustomer();
+				payment.setMoneyammount(dsMuaHang.calcTotal()-temp.getDiscount()*dsMuaHang.calcTotal());
 				payment.input();
 				payment.output();
 			}
