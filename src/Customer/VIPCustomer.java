@@ -26,4 +26,9 @@ public class VIPCustomer extends Customer{
 	public String toString() {
 		return super.toString()+"|Khách hàng VIP";
 	}
+	
+	@Override
+	public void output() {
+		System.out.println(toString());
+	}
 }

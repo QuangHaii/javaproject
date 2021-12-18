@@ -11,4 +11,9 @@ public class NormalCustomer extends Customer{
 	public String toString() {
 		return super.toString()+"|Khách hàng thường";
 	}
+	
+	@Override
+	public void output() {
+		System.out.println(toString());
+	}
 }

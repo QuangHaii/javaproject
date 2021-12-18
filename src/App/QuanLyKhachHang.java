@@ -4,6 +4,9 @@ import java.util.Scanner;
 import Customer.Customer;
 import Customer.NormalCustomer;
 import Customer.VIPCustomer;
+import Product.Drink;
+import Product.Food;
+import Product.Product;
 
 @SuppressWarnings("resource")
 public class QuanLyKhachHang {
@@ -37,9 +40,10 @@ public class QuanLyKhachHang {
 				break;
 			}
 			case 4: {
-				if (searchCustomer()==null)
+				Customer a = searchCustomer();
+				if (a==null)
 					System.out.println("Không tìm thấy khách hàng");
-				else searchCustomer().output();		
+				else a.output();		
 				break;
 			}
 			case 5: {
@@ -52,8 +56,8 @@ public class QuanLyKhachHang {
 	}
 
 	private Customer[] addCustomer() {
-		int key, flag = 0;
 		Customer newArr[] = new Customer[n + 1];
+		int k;
 		for (int i = 0; i < n; i++)
 			newArr[i] = customers[i];
 		do {
@@ -61,29 +65,27 @@ public class QuanLyKhachHang {
 			System.out.println("1.Khách hàng VIP");
 			System.out.println("2.Khách hàng thường");
 			System.out.println("3.Khách hàng vãng lai");
-			key = Integer.parseInt(new Scanner(System.in).nextLine());
-			if (key == 1 || key == 2 || key == 3)
-				flag = 1;
-			else
-				System.out.println("Nhập sai! Nhập lại");
-		} while (flag == 0);
-		switch (key) {
-		case 1: {
-			customers[n] = new VIPCustomer();
-			break;
-		}
-		case 2: {
-			customers[n] = new NormalCustomer();
-			break;
-		}
-		case 3: {
-			customers[n] = new Customer();
-			break;
-		}
-		}
-		customers[n].input();
-		n++;
-		return newArr;
+			k = Integer.parseInt(new Scanner(System.in).nextLine());
+			switch (k) {
+			case 1:
+				newArr[n] = new VIPCustomer();
+				newArr[n].input();
+				n++;
+				return newArr;
+			case 2:
+				newArr[n] = new NormalCustomer();
+				newArr[n].input();
+				n++;
+				return newArr;
+			case 3:
+				newArr[n] = new Customer();
+				newArr[n].input();
+				n++;
+				return newArr;
+			default:
+				throw new IllegalArgumentException("Nhập sai! Nhập lại");
+			}
+		} while (true);
 	}
 
 	private Customer[] deleteCustomer() {
