@@ -48,11 +48,12 @@ public class App {
 			}
 			case 5: {
 				int func, flag = 0;
+				Customer temp = dsKhachHang.searchCustomer();
 				do {
 					dsKhachHang.searchCustomer();
-					if(dsKhachHang.searchCustomer()==null)
+					if(temp==null)
 						System.out.println("Không tìm thấy khách hàng! Mời nhập lại");
-				} while (dsKhachHang.searchCustomer()==null);
+				} while (temp==null);
 				do {
 					System.out.println("Chọn phương thức thanh toán");
 					System.out.println("1.Thẻ ngân hàng");
@@ -80,7 +81,6 @@ public class App {
 					break;
 				}
 				}
-				Customer temp = dsKhachHang.searchCustomer();
 				payment.setMoneyammount(dsMuaHang.calcTotal()-temp.getDiscount()*dsMuaHang.calcTotal());
 				payment.input();
 				payment.output();
