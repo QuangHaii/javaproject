@@ -48,9 +48,9 @@ public class App {
 			}
 			case 5: {
 				int func, flag = 0;
-				Customer temp = dsKhachHang.searchCustomer();
+				Customer temp = null;
 				do {
-					dsKhachHang.searchCustomer();
+					temp = dsKhachHang.searchCustomer();
 					if(temp==null)
 						System.out.println("Không tìm thấy khách hàng! Mời nhập lại");
 				} while (temp==null);
