@@ -22,7 +22,8 @@ public class QuanLyKhachHang {
 			System.out.println("2.Xóa khách hàng");
 			System.out.println("3.Chỉnh sửa khách hàng");
 			System.out.println("4.Tìm kiếm khách hàng");
-			System.out.println("5.Thoát");
+			System.out.println("5.Danh sách sản phẩm");
+			System.out.println("6.Thoát");
 			System.out.println("Mời bạn chọn chức năng:");
 			choice = scanner.nextInt();
 
@@ -47,12 +48,16 @@ public class QuanLyKhachHang {
 				break;
 			}
 			case 5: {
+				customerList(customers);
+				break;
+			}
+			case 6: {
 				break;
 			}
 			default:
 				System.out.println("Nhập sai! Nhập lại");
 			}
-		} while (choice != 5);
+		} while (choice != 6);
 	}
 
 	private Customer[] addCustomer() {

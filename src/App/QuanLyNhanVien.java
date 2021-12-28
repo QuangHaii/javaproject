@@ -24,7 +24,8 @@ public class QuanLyNhanVien {
 			System.out.println("2.Xóa nhân viên");
 			System.out.println("3.Chỉnh sửa nhân viên");
 			System.out.println("4.Tìm kiếm nhân viên");
-			System.out.println("5.Thoát");
+			System.out.println("5.Danh sách sản phẩm");
+			System.out.println("6.Thoát");
 			System.out.println("Mời bạn chọn chức năng:");
 			choice = scanner.nextInt();
 
@@ -46,12 +47,16 @@ public class QuanLyNhanVien {
 				break;
 			}
 			case 5: {
+				stafflist(staffs);
+				break;
+			}
+			case 6:{
 				break;
 			}
 			default:
 				System.out.println("Nhập sai! Nhập lại");
 			}
-		} while (choice != 5);
+		} while (choice != 6);
 	}
 
 	private Staff[] addStaff() {

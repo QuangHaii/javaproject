@@ -17,10 +17,11 @@ public class DonMuaHang implements Tax{
 		Scanner scanner = new Scanner(System.in);
 		do {
 			System.out.println("----------Đặt hàng-----------");
-			System.out.println("1.Thêm món ăn");
-			System.out.println("2.Xóa món ăn");
-			System.out.println("3.Xem tổng giá tiền");
-			System.out.println("4.Thoát");
+			System.out.println("1.Thêm sản phẩm");
+			System.out.println("2.Xóa sản phẩm");
+			System.out.println("3.Xem giỏ hàng");
+			System.out.println("4.Xem tổng giá tiền");
+			System.out.println("5.Thoát");
 			choice = Integer.parseInt(scanner.nextLine());
 
 			switch (choice) {
@@ -33,9 +34,11 @@ public class DonMuaHang implements Tax{
 				break;
 			}
 			case 3:{
-				System.out.println("Số tiền phải thanh toán: "+calcTotal());
+				orderlist();
+				break;
 			}
 			case 4:
+				System.out.println("Số tiền phải thanh toán: "+calcTotal());
 				break;
 			default:
 				System.out.println("Nhập sai! Nhập lại");
@@ -70,6 +73,7 @@ public class DonMuaHang implements Tax{
 		newArr[n].setProductID(productID);
 		newArr[n].setQuantity(quantity);
 		newArr[n].setPrice(p.getPrice());
+		newArr[n].setProductName(p.getProductName());
 		n++;
 		return newArr;
 	}
@@ -113,6 +117,14 @@ public class DonMuaHang implements Tax{
 		for(int i = 0;i<p.length;i++) {
 			System.out.printf((i+1)+".");
 			p[i].output();
+		}
+	}
+	
+	private void orderlist() {
+		System.out.println("----Danh sách các vật phẩm trong giỏ hàng----");
+		for(int i=0;i<orderlist.length;i++) {
+			System.out.println((i+1)+".");
+			orderlist[i].getProductName();
 		}
 	}
 }

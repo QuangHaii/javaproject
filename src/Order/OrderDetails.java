@@ -3,20 +3,21 @@ package Order;
 public class OrderDetails{
 	private int orderID;
 	private int ProductID;
+	private String ProductName;
 	private int quantity;
 	private int price;
 	
 	
 	public OrderDetails() {
-		// TODO Auto-generated constructor stub
 	}
 
 
-	public OrderDetails(int orderID, int productID, int quantity, int price) {
+	public OrderDetails(int orderID, int productID, int quantity, int price,String ProductName) {
 		this.orderID = orderID;
 		this.ProductID = productID;
 		this.quantity = quantity;
 		this.price = price;
+		this.ProductName = ProductName;
 	}
 
 	public int getOrderID() {
@@ -58,5 +59,15 @@ public class OrderDetails{
 		this.price = price;
 	}
 
+
+	public String getProductName() {
+		return ProductName;
+	}
+
+
+	public void setProductName(String productName) {
+		ProductName = productName;
+	}
+	
 	
 }
