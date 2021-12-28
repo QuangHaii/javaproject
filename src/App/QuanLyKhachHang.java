@@ -4,9 +4,7 @@ import java.util.Scanner;
 import Customer.Customer;
 import Customer.NormalCustomer;
 import Customer.VIPCustomer;
-import Product.Drink;
-import Product.Food;
-import Product.Product;
+
 
 @SuppressWarnings("resource")
 public class QuanLyKhachHang {
