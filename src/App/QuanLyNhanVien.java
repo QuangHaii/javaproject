@@ -50,7 +50,7 @@ public class QuanLyNhanVien {
 				stafflist(staffs);
 				break;
 			}
-			case 6:{
+			case 6: {
 				break;
 			}
 			default:
@@ -71,18 +71,36 @@ public class QuanLyNhanVien {
 			case 1:
 				newArr[n] = new Waiter();
 				newArr[n].input();
+				for (int i = 0; i < n; i++) {
+					if (newArr[n].getStaffID() == staffs[i].getStaffID()) {
+						System.out.println("Trùng mã nhân viên: " + staffs[i].getStaffID());
+						return staffs;
+					}
+				}
 				newArr[n].jobDescription();
 				n++;
 				return newArr;
 			case 2:
 				newArr[n] = new Cashier();
 				newArr[n].input();
+				for (int i = 0; i < n; i++) {
+					if (newArr[n].getStaffID() == staffs[i].getStaffID()) {
+						System.out.println("Trùng mã nhân viên: " + staffs[i].getStaffID());
+						return staffs;
+					}
+				}
 				newArr[n].jobDescription();
 				n++;
 				return newArr;
 			case 3:
 				newArr[n] = new Chef();
 				newArr[n].input();
+				for (int i = 0; i < n; i++) {
+					if (newArr[n].getStaffID() == staffs[i].getStaffID()) {
+						System.out.println("Trùng mã nhân viên: " + staffs[i].getStaffID());
+						return staffs;
+					}
+				}
 				newArr[n].jobDescription();
 				n++;
 				return newArr;
@@ -124,8 +142,16 @@ public class QuanLyNhanVien {
 				j = i;
 		if (j == -1)
 			System.out.println("Không tìm thấy nhân viên");
-		else
+		else {
+			Staff s = staffs[j];
 			staffs[j].input();
+			for(int i=0;i<n;i++) {
+				if(staffs[j].getStaffID()==staffs[i].getStaffID()) {
+					System.out.println("Trùng mã nhân viên: "+staffs[i].getStaffID());
+					staffs[j]=s;
+				}
+			}
+		}
 	}
 
 	private void searchStaff() {
@@ -145,8 +171,8 @@ public class QuanLyNhanVien {
 
 	private void stafflist(Staff[] s) {
 		System.out.println("-------Danh sách nhân viên------");
-		for(int i=0;i<s.length;i++) {
-			System.out.println((i+1)+".");
+		for (int i = 0; i < s.length; i++) {
+			System.out.println((i + 1) + ".");
 			s[i].output();
 		}
 	}

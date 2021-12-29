@@ -64,11 +64,21 @@ public class QuanLySanPham {
 			case 1:
 				newArr[n] = new Food();
 				newArr[n].input();
+				for(int i=0;i<n;i++)
+					if(newArr[n].getProductID()==products[i].getProductID()) {
+						System.out.println("Trùng mã sản phẩm: "+products[i].getProductID());
+						return products;
+					}
 				n++;
 				return newArr;
 			case 2:
 				newArr[n] = new Drink();
 				newArr[n].input();
+				for(int i=0;i<n;i++)
+					if(newArr[n].getProductID()==products[i].getProductID()) {
+						System.out.println("Trùng mã sản phẩm: "+products[i].getProductID());
+						return products;
+					}
 				n++;
 				return newArr;
 			default:
@@ -87,7 +97,7 @@ public class QuanLySanPham {
 				j = i;
 		if (products == null || j == -1) {
 			System.out.println("Không có phần tử để xóa");
-			return null;
+			return products;
 		}
 		Product[] newArr = new Product[n - 1];
 		for (int i = 0, k = 0; i < n; i++) {
@@ -109,8 +119,15 @@ public class QuanLySanPham {
 				j = i;
 		if (j == -1)
 			System.out.println("Không tìm thấy sản phẩm");
-		else
+		else {
+			Product p = products[j];
 			products[j].input();
+			for(int i=0;i<n;i++)
+				if(products[j].getProductID()==products[i].getProductID()) {
+					System.out.println("Trùng mã sản phẩm: "+products[i].getProductID());
+					products[j]=p;
+			}
+		}
 	}
 
 	public void searchProduct() {
@@ -121,7 +138,7 @@ public class QuanLySanPham {
 			if (products[i].getProductID() == temp)
 				j = i;
 		if (j == -1)
-			System.out.println("Không tìm thấy nhân viên");
+			System.out.println("Không tìm thấy sản phẩm");
 		else
 			products[j].output();
 

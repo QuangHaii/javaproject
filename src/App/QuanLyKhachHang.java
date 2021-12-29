@@ -73,16 +73,31 @@ public class QuanLyKhachHang {
 			case 1:
 				newArr[n] = new VIPCustomer();
 				newArr[n].input();
+				for(int i=0;i<n;i++)
+					if(newArr[n].getCustomerID()==customers[i].getCustomerID()) {
+						System.out.println("Trùng mã khách hàng: "+customers[i].getCustomerID());
+						return customers;
+					}
 				n++;
 				return newArr;
 			case 2:
 				newArr[n] = new NormalCustomer();
 				newArr[n].input();
+				for(int i=0;i<n;i++)
+					if(newArr[n].getCustomerID()==customers[i].getCustomerID()) {
+						System.out.println("Trùng mã khách hàng: "+customers[i].getCustomerID());
+						return customers;
+					}
 				n++;
 				return newArr;
 			case 3:
 				newArr[n] = new Customer();
 				newArr[n].input();
+				for(int i=0;i<n;i++)
+					if(newArr[n].getCustomerID()==customers[i].getCustomerID()) {
+						System.out.println("Trùng mã khách hàng: "+customers[i].getCustomerID());
+						return customers;
+					}
 				n++;
 				return newArr;
 			default:
@@ -123,8 +138,15 @@ public class QuanLyKhachHang {
 				j = i;
 		if (j == -1)
 			System.out.println("Không tìm thấy khách hàng");
-		else
+		else {
+			Customer c = customers[j];
 			customers[j].input();
+			for(int i=0;i<n;i++)
+				if(customers[j].getCustomerID()==customers[i].getCustomerID()) {
+					System.out.println("Trùng mã khách hàng: "+customers[i].getCustomerID());
+					customers[j]=c;
+				}
+		}
 	}
 
 	public Customer searchCustomer() {
