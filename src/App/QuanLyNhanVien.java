@@ -24,7 +24,7 @@ public class QuanLyNhanVien {
 			System.out.println("2.Xóa nhân viên");
 			System.out.println("3.Chỉnh sửa nhân viên");
 			System.out.println("4.Tìm kiếm nhân viên");
-			System.out.println("5.Danh sách sản phẩm");
+			System.out.println("5.Danh sách nhân viên");
 			System.out.println("6.Thoát");
 			System.out.println("Mời bạn chọn chức năng:");
 			choice = scanner.nextInt();
