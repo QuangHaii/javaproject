@@ -47,40 +47,13 @@ public class App {
 				break;
 			}
 			case 5: {
-				int func, flag = 0;
 				Customer temp = null;
 				do {
 					temp = dsKhachHang.searchCustomer();
 					if(temp==null)
 						System.out.println("Không tìm thấy khách hàng! Mời nhập lại");
 				} while (temp==null);
-				do {
-					System.out.println("Chọn phương thức thanh toán");
-					System.out.println("1.Thẻ ngân hàng");
-					System.out.println("2.Điện thoại");
-					System.out.println("3.Tiền mặt");
-					System.out.println("Mời bạn chọn:");
-					func = Integer.parseInt(scanner.nextLine());
-					if (func == 1 || func == 2 || func == 3)
-						flag = 1;
-					else
-						System.out.println("Nhập sai! Nhập lại");
-				} while (flag == 0);
-				Payment payment = null;
-				switch (func) {
-				case 1: {
-					payment = new CreditCard();
-					break;
-				}
-				case 2: {
-					payment = new MobileBanking();
-					break;
-				}
-				case 3: {
-					payment = new Cash();
-					break;
-				}
-				}
+				Payment payment = new Cash();
 				payment.setMoneyammount(dsMuaHang.calcTotal()-temp.getDiscount()*dsMuaHang.calcTotal());
 				payment.input();
 				payment.output();
