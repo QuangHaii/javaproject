@@ -55,6 +55,12 @@ public class DonMuaHang implements Tax{
 		int id = Integer.parseInt(scanner.nextLine());
 		System.out.println("Nhập mã sản phẩm muốn thêm: ");
 		int productID = Integer.parseInt(scanner.nextLine());
+		for(int i=0;i<n;i++) {
+			if(productID==orderlist[i].getProductID()) {
+				System.out.println("Trùng mã sản phẩm: "+orderlist[i].getProductID());
+				return orderlist;
+			}
+		}
 		Product p =null;
 		for(int i = 0;i<product.length;i++)
 			if(product[i].getProductID()==productID)
