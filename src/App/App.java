@@ -6,6 +6,10 @@ import Customer.Customer;
 import Payment.*;
 
 public class App {
+	private static QuanLyNhanVien dsNhanVien = new QuanLyNhanVien();
+	private static QuanLyKhachHang dsKhachHang = new QuanLyKhachHang();
+	private static QuanLySanPham dsSanPham = new QuanLySanPham();
+	private static DonMuaHang dsMuaHang = new DonMuaHang();
 
 	public static void menu() {
 		System.out.println("------------------Danh sách mục------------------------");
@@ -20,10 +24,6 @@ public class App {
 
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
-		QuanLyNhanVien dsNhanVien = new QuanLyNhanVien();
-		QuanLyKhachHang dsKhachHang = new QuanLyKhachHang();
-		QuanLySanPham dsSanPham = new QuanLySanPham();
-		DonMuaHang dsMuaHang = new DonMuaHang();
 		Scanner scanner = new Scanner(System.in);
 		int key;
 		do {
