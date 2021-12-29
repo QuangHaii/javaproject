@@ -3,13 +3,14 @@ package App;
 import java.util.Scanner;
 
 import Customer.Customer;
+import Order.Order;
 import Payment.*;
 
 public class App {
 	private static QuanLyNhanVien dsNhanVien = new QuanLyNhanVien();
 	private static QuanLyKhachHang dsKhachHang = new QuanLyKhachHang();
 	private static QuanLySanPham dsSanPham = new QuanLySanPham();
-	private static DonMuaHang dsMuaHang = new DonMuaHang();
+	private static QuanLyDonHang dsMuaHang = new QuanLyDonHang();
 
 	public static void menu() {
 		System.out.println("------------------Danh sách mục------------------------");
@@ -43,18 +44,24 @@ public class App {
 				break;
 			}
 			case 4: {
-				dsMuaHang.order();
+				dsMuaHang.edit();
 				break;
 			}
 			case 5: {
 				Customer temp = null;
+				Order tempOrder = null;
 				do {
 					temp = dsKhachHang.searchCustomer();
 					if(temp==null)
 						System.out.println("Không tìm thấy khách hàng! Mời nhập lại");
 				} while (temp==null);
+				do {
+					tempOrder = dsMuaHang.searchBills();
+					if(tempOrder==null)
+						System.out.println("Không tìm thấy đơn hàng! Mời nhập lại");
+				} while (tempOrder==null);
 				Payment payment = new Cash();
-				payment.setMoneyammount(dsMuaHang.calcTotal()-temp.getDiscount()*dsMuaHang.calcTotal());
+				payment.setMoneyammount(tempOrder.calcTotal()-temp.getDiscount()*tempOrder.calcTotal());
 				payment.input();
 				payment.output();
 			}

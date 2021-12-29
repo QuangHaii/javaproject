@@ -1,16 +1,25 @@
-package App;
+package Order;
 
 import java.util.Scanner;
-import Order.OrderDetails;
-import Order.Tax;
+
+import App.QuanLySanPham;
 import Product.Product;
 
 @SuppressWarnings("resource")
-public class DonMuaHang implements Tax{
+public class Order implements Tax{
 	private OrderDetails orderlist[] = new OrderDetails[99];
 	private QuanLySanPham productlist = new QuanLySanPham();
 	private Product product[] = new Product[99];
 	private static int n = 0;
+	private int orderID;
+
+	public int getOrderID() {
+		return orderID;
+	}
+
+	public void setOrderID(int orderID) {
+		this.orderID = orderID;
+	}
 
 	public void order() {
 		int choice;
@@ -51,8 +60,6 @@ public class DonMuaHang implements Tax{
 		product = productlist.getProduct();
 		ordermenu(product);
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Nhập mã đơn hàng: ");
-		int id = Integer.parseInt(scanner.nextLine());
 		System.out.println("Nhập mã sản phẩm muốn thêm: ");
 		int productID = Integer.parseInt(scanner.nextLine());
 		for(int i=0;i<n;i++) {
@@ -75,7 +82,7 @@ public class DonMuaHang implements Tax{
 		for (int i = 0; i < n; i++)
 			newArr[i] = orderlist[i];
 		newArr[n] = new OrderDetails();
-		newArr[n].setOrderID(id);
+		newArr[n].setOrderID(orderID);
 		newArr[n].setProductID(productID);
 		newArr[n].setQuantity(quantity);
 		newArr[n].setPrice(p.getPrice());
@@ -85,11 +92,11 @@ public class DonMuaHang implements Tax{
 	}
 
 	private OrderDetails[] deleteItem() {
-		System.out.println("Nhập mã đơn hàng cần xóa");
+		System.out.println("Nhập mã sản phẩm cần xóa");
 		int temp = Integer.parseInt(new Scanner(System.in).nextLine());
 		int j = -1;
 		for (int i = 0; i < n; i++)
-			if (orderlist[i].getOrderID() == temp)
+			if (orderlist[i].getProductID() == temp)
 				j = i;
 		if (orderlist == null || j == -1) {
 			System.out.println("Không tìm thấy đơn hàng cần xóa");
