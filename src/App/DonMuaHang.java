@@ -129,8 +129,7 @@ public class DonMuaHang implements Tax{
 	private void orderlist() {
 		System.out.println("----Danh sách các vật phẩm trong giỏ hàng----");
 		for(int i=0;i<orderlist.length;i++) {
-			System.out.println((i+1)+".");
-			orderlist[i].getProductName();
+			System.out.println((i+1)+"."+orderlist[i].getProductName());
 		}
 	}
 }
