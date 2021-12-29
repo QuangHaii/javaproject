@@ -6,7 +6,6 @@ public abstract class Product {
 	protected String productName;
 	protected int productID;
 	protected int amount;
-	protected int importDate;
 	protected int price;
 	protected String productType;
 
@@ -14,11 +13,10 @@ public abstract class Product {
 
 	}
 
-	public Product(String productName, int productID, int amount, int importDate, int price, String productType) {
+	public Product(String productName, int productID, int amount, int price, String productType) {
 		this.productName = productName;
 		this.productID = productID;
 		this.amount = amount;
-		this.importDate = importDate;
 		this.price = price;
 		this.productType = productType;
 	}
@@ -46,15 +44,7 @@ public abstract class Product {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-
-	public int getImportDate() {
-		return importDate;
-	}
-
-	public void setImportDate(int importDate) {
-		this.importDate = importDate;
-	}
-
+	
 	public int getPrice() {
 		return price;
 	}
@@ -80,15 +70,13 @@ public abstract class Product {
 		productID = Integer.parseInt(scanner.nextLine());
 		System.out.println("Nhập số lượng hàng hóa: ");
 		amount = Integer.parseInt(scanner.nextLine());
-		System.out.println("Nhập ngày nhập hàng: ");
-		importDate = Integer.parseInt(scanner.nextLine());
 		System.out.println("Nhập giá tiền: ");
 		price = Integer.parseInt(scanner.nextLine());
 	}
 
 	@Override
 	public String toString() {
-		return  "Tên sản phẩm: "+ productName +"|Mã sản phẩm: " + productID+"|Số lượng hàng hóa: " + amount + "|Ngày nhập hàng: " + importDate + "|Giá tiền: " + price;
+		return  "Tên sản phẩm: "+ productName +"|Mã sản phẩm: " + productID+"|Số lượng hàng hóa: " + amount + "|Giá tiền: " + price;
 	}
 
 	public void output() {
