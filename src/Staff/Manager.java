@@ -1,7 +1,7 @@
 package Staff;
 
 public class Manager extends Staff {
-	private String passwordString;
+	private String password;
 
 	public Manager() {
 		super();
@@ -10,12 +10,17 @@ public class Manager extends Staff {
 	
 	public Manager(String password) {
 		super();
-		this.passwordString = password;
+		this.password = password;
+	}
+	
+	public String getPassword() {
+		return password;
 	}
 
-	public String getPasswordString() {
-		return passwordString;
+	public void setPassword(String password) {
+		this.password = password;
 	}
+
 	@Override
 	public void jobDescription() {
 		System.out.println("Quản lý nhân viên");
