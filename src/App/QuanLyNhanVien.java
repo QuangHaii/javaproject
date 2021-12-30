@@ -13,7 +13,7 @@ public class QuanLyNhanVien {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Nhập password:");
 		String tempString = scanner.nextLine();
-		if (!tempString.equals(manager.getPasswordString())) {
+		if (!tempString.equals(manager.getPassword())) {
 			System.out.println("Sai password!");
 			return;
 		}
