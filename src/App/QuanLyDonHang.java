@@ -52,7 +52,7 @@ public class QuanLyDonHang {
 		} while (choice != 6);
 	}
 
-	private Order[] addBills() {
+	Order[] addBills() {
 		Order newArr[] = new Order[n + 1];
 		for (int i = 0; i < n; i++)
 			newArr[i] = listBills[i];
@@ -134,8 +134,7 @@ public class QuanLyDonHang {
 	private void billslist(Order[] orders) {
 		System.out.println("------Danh sách đơn hàng------");
 		for (int i = 0; i < orders.length; i++) {
-			System.out.println((i + 1) + ".Mã: ");
-			orders[i].getOrderID();
+			System.out.println((i + 1) + ".Mã: "+orders[i].getOrderID());
 		}
 	}
 	

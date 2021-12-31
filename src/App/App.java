@@ -48,22 +48,54 @@ public class App {
 				break;
 			}
 			case 5: {
+				int k=0;
 				Customer temp = null;
 				Order tempOrder = null;
 				do {
 					temp = dsKhachHang.searchCustomer();
-					if(temp==null)
-						System.out.println("Không tìm thấy khách hàng! Mời nhập lại");
+					if(temp==null) {
+						System.out.println("Không tìm thấy khách hàng! Mời chọn:");
+						System.out.println("1.Nhập lại mã khách hàng|2.Thêm khách hàng");
+						k = Integer.parseInt(new Scanner(System.in).nextLine());
+						switch (k) {
+						case 1: {
+							break;
+						}
+						case 2: {
+							dsKhachHang.addCustomer();
+							break;
+						}
+						case 3:{
+							break;
+						}
+						default:
+							throw new IllegalArgumentException("Giá trị không hợp lệ: " + k);
+						}
+					}
 				} while (temp==null);
+				k = 0;
 				do {
 					tempOrder = dsMuaHang.searchBills();
-					if(tempOrder==null)
-						System.out.println("Không tìm thấy đơn hàng! Mời nhập lại");
+					if(tempOrder==null) {
+						System.out.println("Không tìm thấy đơn hàng! Mời chọn:");
+						System.out.println("1.Nhập lại mã đơn hàng|2.Thêm đơn hàng");
+						switch (k) {
+						case 1: {
+							break;
+						}
+						case 2: {
+							dsMuaHang.addBills();
+						}
+						default:
+							throw new IllegalArgumentException("Giá trị không hợp lệ: " + k);
+						}
+					}
 				} while (tempOrder==null);
 				Payment payment = new Cash();
 				payment.setMoneyammount(tempOrder.calcTotal()-temp.getDiscount()*tempOrder.calcTotal());
 				payment.input();
 				payment.output();
+				break;
 			}
 			case 6:
 				break;

@@ -8,10 +8,21 @@ import Product.Product;
 @SuppressWarnings("resource")
 public class Order implements Tax{
 	private OrderDetails orderlist[] = new OrderDetails[99];
-	private QuanLySanPham productlist = new QuanLySanPham();
-	private Product product[] = new Product[99];
-	private static int n = 0;
+	private static QuanLySanPham productlist = new QuanLySanPham();
+	private static Product product[] = productlist.getProduct();
+	private int n = 0;
 	private int orderID;
+	
+	public Order() {
+		
+	}
+	
+	public Order(OrderDetails[] orderlist, int n, int orderID) {
+		super();
+		this.orderlist = orderlist;
+		this.n = n;
+		this.orderID = orderID;
+	}
 
 	public int getOrderID() {
 		return orderID;
@@ -46,18 +57,21 @@ public class Order implements Tax{
 				orderlist();
 				break;
 			}
-			case 4:
+			case 4:{
 				System.out.println("Số tiền phải thanh toán: "+calcTotal());
 				break;
+			}
+			case 5:{
+				break;
+			}
 			default:
 				System.out.println("Nhập sai! Nhập lại");
 			}
-		} while (choice != 4);
+		} while (choice != 5);
 
 	}
 	
 	private OrderDetails[] addItem() {
-		product = productlist.getProduct();
 		ordermenu(product);
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Nhập mã sản phẩm muốn thêm: ");

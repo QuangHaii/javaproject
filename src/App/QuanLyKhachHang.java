@@ -58,7 +58,7 @@ public class QuanLyKhachHang {
 		} while (choice != 6);
 	}
 
-	private Customer[] addCustomer() {
+	Customer[] addCustomer() {
 		Customer newArr[] = new Customer[n + 1];
 		int k;
 		for (int i = 0; i < n; i++)
