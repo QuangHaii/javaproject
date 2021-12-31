@@ -106,12 +106,6 @@ public class QuanLyDonHang {
 		else {
 			System.out.println("Nhập mã đơn hàng mới : ");
 			int id = Integer.parseInt(new Scanner(System.in).nextLine());
-			for (int i = 0; i < n; i++) {
-				if (id == listBills[i].getOrderID()) {
-					System.out.println("Trùng mã đơn hàng: " + listBills[i].getOrderID());
-					return;
-				}
-			}
 			listBills[j].setOrderID(id);
 		}
 	}

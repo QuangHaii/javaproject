@@ -143,15 +143,8 @@ public class QuanLyNhanVien {
 		if (j == -1)
 			System.out.println("Không tìm thấy nhân viên");
 		else {
-			Staff s = staffs[j];
 			staffs[j].input();
-			for(int i=0;i<n;i++) {
-				if(staffs[j].getStaffID()==staffs[i].getStaffID()) {
-					System.out.println("Trùng mã nhân viên: "+staffs[i].getStaffID());
-					staffs[j]=s;
-				}
-			}
-		}
+			}	
 	}
 
 	private void searchStaff() {

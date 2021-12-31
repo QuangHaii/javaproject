@@ -139,13 +139,7 @@ public class QuanLyKhachHang {
 		if (j == -1)
 			System.out.println("Không tìm thấy khách hàng");
 		else {
-			Customer c = customers[j];
 			customers[j].input();
-			for(int i=0;i<n;i++)
-				if(customers[j].getCustomerID()==customers[i].getCustomerID()) {
-					System.out.println("Trùng mã khách hàng: "+customers[i].getCustomerID());
-					customers[j]=c;
-				}
 		}
 	}
 

@@ -120,13 +120,7 @@ public class QuanLySanPham {
 		if (j == -1)
 			System.out.println("Không tìm thấy sản phẩm");
 		else {
-			Product p = products[j];
 			products[j].input();
-			for(int i=0;i<n;i++)
-				if(products[j].getProductID()==products[i].getProductID()) {
-					System.out.println("Trùng mã sản phẩm: "+products[i].getProductID());
-					products[j]=p;
-			}
 		}
 	}
 
