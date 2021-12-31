@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Drink extends Product {
 	private String drinkType;
-	
 	public Drink() {
 		super();
 		productType="Drink";
