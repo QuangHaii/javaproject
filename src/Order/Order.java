@@ -124,7 +124,6 @@ public class Order implements Tax{
 		}
 		n--;
 		return newArr;
-		
 	}
 
 	@Override
