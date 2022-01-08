@@ -55,14 +55,14 @@ public class App {
 					temp = dsKhachHang.searchCustomer();
 					if(temp==null) {
 						System.out.println("Không tìm thấy khách hàng! Mời chọn:");
-						System.out.println("1.Nhập lại mã khách hàng|2.Thêm khách hàng");
+						System.out.println("1.Nhập lại mã khách hàng|2.Chỉnh sửa khách hàng");
 						k = Integer.parseInt(new Scanner(System.in).nextLine());
 						switch (k) {
 						case 1: {
 							break;
 						}
 						case 2: {
-							dsKhachHang.addCustomer();
+							dsKhachHang.edit();
 							break;
 						}
 						case 3:{
@@ -78,13 +78,15 @@ public class App {
 					tempOrder = dsMuaHang.searchBills();
 					if(tempOrder==null) {
 						System.out.println("Không tìm thấy đơn hàng! Mời chọn:");
-						System.out.println("1.Nhập lại mã đơn hàng|2.Thêm đơn hàng");
+						System.out.println("1.Nhập lại mã đơn hàng|2.Chỉnh sửa đơn hàng");
+						k = Integer.parseInt(new Scanner(System.in).nextLine());
 						switch (k) {
 						case 1: {
 							break;
 						}
 						case 2: {
-							dsMuaHang.addBills();
+							dsMuaHang.edit();
+							break;
 						}
 						default:
 							throw new IllegalArgumentException("Giá trị không hợp lệ: " + k);

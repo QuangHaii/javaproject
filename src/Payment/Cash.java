@@ -36,7 +36,7 @@ public class Cash extends Payment{
 	
 	@Override
 	public String toString() {
-		return "Nhận số tiền: "+cash+"Tiền dư: "+authorized();
+		return "Nhận số tiền: "+cash+"|Tiền dư: "+authorized();
 	}
 	
 	@Override
